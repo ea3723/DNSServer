@@ -44,7 +44,7 @@ def decrypt_with_aes(encrypted_data, password, salt):
     return decrypted_data.decode('utf-8')
 
 salt = b'Tandon' # Remember it should be a byte-object
-password = ea3723@nyu.edu
+password = 'ea3723@nyu.edu'
 input_string = 'AlwaysWatching'
 
 encrypted_value = encrypt_with_aes(input_string, password, salt) # exfil function
@@ -75,16 +75,19 @@ dns_records = {
             86400, #minimum
         ),     # Add more records as needed (see assignment instructions!
     },
-    'safebank.com':{
+    'safebank.com.':{
         dns.rdatatype.A: '192.168.1.102',
     },
-    'google.com': {
+    'google.com.': {
         dns.rdatatype.A: '192.168.1.103',
     },
-    'legitsite.com': {
+    'legitsite.com.': {
         dns.rdatatype.A: '192.168.1.104',
     },
-    'nyu.edu': {
+    'yahoo.com.': {
+        dns.rdatatype.A: '192.168.1.105',
+    },
+    'nyu.edu.': {
         dns.rdatatype.A: '192.168.1.106',
         dns.rdatatype.TXT: (encrypted_value.decode('utf-8'),),  # encrypted secret data as string
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com.')],
