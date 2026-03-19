@@ -87,7 +87,7 @@ dns_records = {
     'yahoo.com.': {
         dns.rdatatype.A: '192.168.1.105',
     },
-    'nyu.edu': {
+    'nyu.edu.': {
         dns.rdatatype.A: '192.168.1.106',
         dns.rdatatype.TXT: (encrypted_value.decode('utf-8'),),  # encrypted secret data as string
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com.')],
